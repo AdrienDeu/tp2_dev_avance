@@ -11,7 +11,7 @@ Le développement de ce programme est scindé en 3 étapes :
 - La 1ère étape a consisté à comprendre comment fonctionne l'accès à l'**API** Marvel et à récupérer les données en JS avec **fetch**.
 - La 2ème étape a consisté à implémenter l'application web avec **Fastify** et **Handlebars**
 - La 3ème étape a consisté à implémenter la **conteneurisation** de l'application avec **Docker**.
-- 
+  
 ### Difficultés rencontrées
 Durant le TP, je n'ai pas eu trop de soucis pour développer, mais je n'ai **pas réussi à dockeriser** l'application...
 
