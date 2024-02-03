@@ -1,11 +1,21 @@
+{{> header}}
 
 <div class="container-fluid m-2 p-5 bg-primary text-center">
     <h1>Les Marvels</h1>
 </div>
-<div class="container m-2 p-5 bg-primary  text-center">
-    <h2>Mes comics</h2>
-
+<div class="container m-2 p-5 bg-primary text-center ">
+<h2>Mes comics</h2>
+<div class="d-flex flex-row flex-wrap justify-content-center"">
+    {{#each characters}}
+        <div class="card m-2 p-2 bg-light " style="width: 18rem;">
+            <img src="{{thumbnail.path}}.{{thumbnail.extension}}" class="card-img-top" alt="{{name}}">
+            <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text">{{description}}</p>
+            </div>
+        </div>
+    {{/each}}
 </div>
 
 
-
+{{> footer}}
