@@ -4,6 +4,7 @@ import handlebars from 'handlebars';
 import {getData, getHash} from "./api.js";
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
+import process from "process";
 
 const server = fastify();
 const __filename = fileURLToPath(import.meta.url);
@@ -42,15 +43,13 @@ for(let i = 0; i<data.data.results.length; ++i) {
         personnages[i] = data.data.results[i];
     }
 }
-console.log(personnages);
 
 server.get('/', (request, reply) => {
     reply.view('/templates/index.hbs', { characters: personnages });
 });
-server.listen(3000, (err, address) => {
-    if (err) {
-        console.error(err);
+server.listen({ port: 3000, host: '127.0.0.1' })
+    .then((address) => console.log(`Server listening at ${address}`))
+    .catch((err) => {
+        console.log(err);
         process.exit(1);
-    }
-    console.log(`Server listening at ${address}`);
-});
+    });
